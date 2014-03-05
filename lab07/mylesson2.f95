@@ -17,10 +17,10 @@ PROGRAM From_Here_to_There
 IMPLICIT NONE  !Must explicitly declare all variables
 
 ! Declare the variables and initialize.
-
+    REAL :: fix
 
 ! Code here
-
+    fix = 1.072
 
 
 ! Say Goodbye

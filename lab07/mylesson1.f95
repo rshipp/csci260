@@ -7,8 +7,8 @@
 !  DESCRIPTION: Display trig tables.
 !  VARIABLES USED:
 !    NAME:           TYPE:     COMMENT:
-!
-!
+!  deg               INTEGER   Degrees
+!  rad               REAL      Radians
 !---------------------------------------------------------------------------
 PROGRAM A_Format_Of_Things
 IMPLICIT NONE  !Must explicitly declare all variables
