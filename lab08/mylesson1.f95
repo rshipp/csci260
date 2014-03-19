@@ -7,7 +7,16 @@
 !  DESCRIPTION: Familiarize yourself with file I/O syntax.
 !  VARIABLES USED:
 !    NAME:           TYPE:     COMMENT:
-!  
+!  n                 INTEGER   Total lines
+!  err               INTEGER   Error value
+!  sumx              REAL      Sum of x
+!  sumy              REAL      Sum of y
+!  sumxs             REAL      Sum of x**2
+!  sumxy             REAL      Sum of x*y
+!  x                 REAL      x value
+!  y                 REAL      y value
+!  m                 REAL      Slope
+!  b                 REAL      Y-intercept
 !---------------------------------------------------------------------------
 PROGRAM Least_Squares_Lab
 IMPLICIT NONE  !Must explicitly declare all variables

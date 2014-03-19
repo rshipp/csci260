@@ -7,7 +7,13 @@
 !  DESCRIPTION: Familiarize yourself with file I/O syntax.
 !  VARIABLES USED:
 !    NAME:           TYPE:     COMMENT:
-!  
+!  list1             INTEGER   Array of integers
+!  list2             INTEGER   Array of integers
+!  len1              INTEGER   Length of list 1
+!  len2              INTEGER   Length of list 2
+!  err               INTEGER   Error value
+!  index1            INTEGER   Index of list 1
+!  index2            INTEGER   Index of list 2
 !---------------------------------------------------------------------------
 PROGRAM File_Merge_Lab
 IMPLICIT NONE  !Must explicitly declare all variables
