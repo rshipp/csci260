@@ -12,8 +12,32 @@
 PROGRAM Least_Squares_Lab
 IMPLICIT NONE  !Must explicitly declare all variables
 ! Declare the variables and initialize.
+    INTEGER :: n, err
+    REAL    :: sumx, sumy, sumxs, sumxy, x, y, m, b
 
 ! Code here
+    sumx = 0
+    sumy = 0
+    sumxs = 0
+    sumxy = 0
+    n = 0
+    err = 0
+    OPEN(1, file='inData.dat', action='read')
+    DO WHILE (err .EQ. 0)
+        READ(1,*, iostat=err) x, y
+	sumx = sumx + x
+	sumy = sumy + y
+	sumxs = sumxs + x**2
+	sumxy = sumxy + x*y
+	n = n + 1
+    END DO
+
+    m = (sumxy - sumx*(sumy/n))/(sumxs - sumx*(sumx/n))
+    b = (sumy/n) - m*(sumy/n)
+
+    WRITE(*,*) "Number of values", n
+    WRITE(*,*) "Slope", m
+    WRITE(*,*) "Y-intercept", b
 
 ! Say Goodbye
    WRITE(*,*)
