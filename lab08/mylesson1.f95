@@ -25,11 +25,11 @@ IMPLICIT NONE  !Must explicitly declare all variables
     OPEN(1, file='inData.dat', action='read')
     DO WHILE (err .EQ. 0)
         READ(1,*, iostat=err) x, y
-	sumx = sumx + x
-	sumy = sumy + y
-	sumxs = sumxs + x**2
-	sumxy = sumxy + x*y
-	n = n + 1
+        sumx = sumx + x
+        sumy = sumy + y
+        sumxs = sumxs + x**2
+        sumxy = sumxy + x*y
+        n = n + 1
     END DO
 
     m = (sumxy - sumx*(sumy/n))/(sumxs - sumx*(sumx/n))
