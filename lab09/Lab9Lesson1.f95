@@ -7,9 +7,15 @@
 !  DESCRIPTION: Play the lucky 7 dice game.
 !  VARIABLES USED:
 !    NAME:       TYPE:     COMMENT:
-!
-!
-!
+!  d1            INTEGER   Value of dice 1.
+!  d2            INTEGER   Value of dice 2.
+!  bet           INTEGER   How much to bet.
+!  ch            INTEGER   User's choice.
+!  amount        INTEGER   Amount in the bank.
+!  pay           INTEGER   How much to pay the user.
+!  total         INTEGER   Total d1+d2.
+!  x             REAL      Random.
+!  ans           CHARACTER User's answer.
 !---------------------------------------------------------------------------
 
 Program Lucky_7

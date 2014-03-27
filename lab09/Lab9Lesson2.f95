@@ -7,7 +7,7 @@
 !  DESCRIPTION: Find road traffic density.
 !  VARIABLES USED:
 !    NAME:           TYPE:     COMMENT:
-!
+!  lambda            REAL      Lambda for poisson function, 1.6.
 !
 !
 !---------------------------------------------------------------------------
