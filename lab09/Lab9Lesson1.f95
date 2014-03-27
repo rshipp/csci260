@@ -17,11 +17,13 @@ Program Lucky_7
 Implicit None  !Must explicitly declare all variables
 
 ! Declare the variables and initialize.
-INTEGER :: d1, d2, bet, ch
-REAL    :: x
+INTEGER   :: d1, d2, bet, ch, amount, pay, total
+REAL      :: x
+CHARACTER :: ans
 
 
 ! Code the Problem Here
+    amount = 100
 
     CALL RANDOM_SEED
     DO
@@ -30,6 +32,45 @@ REAL    :: x
         d1 = INT(x * 6) +1
         CALL RANDOM_NUMBER(x)
         d2 = INT(x * 6) +1
+        total = d1 + d2
+
+        WRITE(*,*) "Dice 1's value is", d1
+        WRITE(*,*) "Dice 2's value is", d2
+        WRITE(*,*)"*****************************************************"
+        WRITE(*,*) "The total amount is", total
+        WRITE(*,*)"*****************************************************"
+        
+        IF (total .LE. 6 .AND. ch .EQ. 1) THEN
+            pay = bet
+            WRITE(*,*) "You win! $", pay
+        ELSE IF (total .EQ. 7 .AND. ch .EQ. 2) THEN
+            pay = 3 * bet
+            WRITE(*,*) "You win! $", pay
+        ELSE IF (total .GE. 8 .AND. ch .EQ. 3) THEN
+            pay = bet
+            WRITE(*,*) "You win! $", pay
+        ELSE
+            pay = -1 * bet
+            WRITE(*,*) "You lose. $", pay
+        END IF
+
+        amount = amount + pay
+        WRITE(*,*) "You have $", amount, "to work with"
+        IF (amount .GE. 0) THEN
+            WRITE(*,*) "Would you like to continue the game?? (y/n)"
+            READ(*,*) ans
+            DO
+                IF (ans .EQ. 'y')EXIT
+                IF (ans .EQ. 'n')STOP
+                WRITE(*,*)"You entered an invalid choice, choose again"
+                READ(*,*) ans
+            END DO
+        ELSE
+            WRITE(*,*) "Game Over"
+            WRITE(*,*) "Expect a visit from the collectors"
+            STOP
+        END IF
+
     END DO
 
 
